@@ -1,89 +1,104 @@
-# 🌬️ AirGuard — Smart Factory Monitoring System
+# 🌬️ AirGuard
 
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" width="90" alt="Flutter Logo"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" width="85" alt="Flutter"/>
   &nbsp;&nbsp;&nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" width="90" alt="Firebase Logo"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" width="85" alt="Firebase"/>
   &nbsp;&nbsp;&nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" width="90" alt="Dart Logo"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" width="85" alt="Dart"/>
+</p>
+
+<h3 align="center">
+  IoT-Based Smart Factory Monitoring System
+</h3>
+
+<p align="center">
+  A real-time factory monitoring application built with
+  <b>Flutter, Firebase, ESP32, and IoT sensors.</b>
 </p>
 
 <p align="center">
-  <b>IoT-Based Smart Factory Monitoring & Environmental Safety System</b>
-</p>
-
-<p align="center">
-  A real-time monitoring application built with Flutter, Firebase, ESP32, and environmental sensors.
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Dart-3.x-0175C2?logo=dart&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Firebase-Firestore-FFCA28?logo=firebase&logoColor=black"/>
-  <img src="https://img.shields.io/badge/ESP32-IoT-E7352C?logo=espressif&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Platform-Web%20%7C%20Android-34A853"/>
+  <img src="https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white" alt="Flutter"/>
+  <img src="https://img.shields.io/badge/Dart-3.x-0175C2?logo=dart&logoColor=white" alt="Dart"/>
+  <img src="https://img.shields.io/badge/Firebase-Firestore-FFCA28?logo=firebase&logoColor=black" alt="Firebase"/>
+  <img src="https://img.shields.io/badge/ESP32-IoT-E7352C?logo=espressif&logoColor=white" alt="ESP32"/>
+  <img src="https://img.shields.io/badge/Platform-Web%20%7C%20Android-34A853" alt="Platform"/>
 </p>
 
 ---
 
-## 📖 About the Project
+## 📖 About AirGuard
 
 **AirGuard** is an IoT-based smart factory monitoring system designed to monitor machine conditions and environmental parameters in real time.
 
-The system combines an **ESP32 microcontroller**, environmental sensors, **Firebase Cloud Firestore**, and a **Flutter application** to provide a centralized monitoring dashboard.
+The system combines an **ESP32 microcontroller**, environmental sensors, **Firebase Cloud Firestore**, and a **Flutter application** to provide a centralized monitoring platform.
 
-Sensor data collected from the factory environment is transmitted through the ESP32 and stored in Firebase. The Flutter application then listens to the Firebase database and displays the latest information in real time.
+Sensor data collected from the factory environment is transmitted through the ESP32 and stored in Firebase. The Flutter application retrieves and listens to the Firestore data to display updated information to the user.
 
-### 🎯 Main Goal
+### 🎯 Project Objectives
 
-The main goal of AirGuard is to provide a simple and efficient way to:
+AirGuard aims to provide:
 
-* Monitor factory machine status
-* Monitor temperature and environmental conditions
-* Receive real-time sensor updates
-* Store IoT data in the cloud
-* Visualize factory conditions through a modern dashboard
-* Help identify abnormal conditions quickly
+* 🏭 Real-time machine monitoring
+* 🌡️ Environmental monitoring
+* 📡 IoT-based data collection
+* ☁️ Cloud-based data storage
+* 📊 Real-time dashboard visualization
+* 🚨 Early identification of abnormal conditions
+* 📱 A simple and user-friendly monitoring interface
 
 ---
 
-## ✨ Key Features
+# ✨ Key Features
 
-### 🏭 Machine Monitoring
+## 🏭 Machine Status Monitoring
 
-Monitor the current state of factory machines:
+The system monitors different machine states:
 
-* 🟢 **Running**
-* 🟡 **Idle**
-* 🔴 **Error**
+| Status     | Meaning                                       |
+| ---------- | --------------------------------------------- |
+| 🟢 Running | Machine is operating normally                 |
+| 🟡 Idle    | Machine is currently inactive                 |
+| 🔴 Error   | Machine has encountered an abnormal condition |
 
-Machine status is stored in **Cloud Firestore** and displayed on the Flutter dashboard.
+Machine status information is stored in **Cloud Firestore** and displayed in the Flutter dashboard.
 
-### 🌡️ Environmental Monitoring
+---
 
-The system can collect environmental data using sensors such as:
+## 🌡️ Environmental Monitoring
 
-* Temperature
-* Humidity
-* Air quality / gas level
-* Other connected IoT sensor readings
+AirGuard is designed to collect environmental data using IoT sensors such as:
 
-### 📡 Real-Time Data
+* 🌡️ Temperature
+* 💧 Humidity
+* 🌫️ Air quality / gas level
+* ⚙️ Machine-related sensor readings
 
-Flutter listens to Firestore for changes, allowing the dashboard to update automatically whenever new sensor data arrives.
+---
 
-### ☁️ Cloud Database
+## 📡 Real-Time Monitoring
 
-Firebase Cloud Firestore is used to:
+The Flutter application listens to Firebase Firestore for updated data.
 
-* Store machine states
-* Store sensor readings
-* Synchronize data
-* Provide real-time updates
+When new sensor information is available, the application can automatically update the displayed values without requiring a manual refresh.
 
-### 📱 Cross-Platform Application
+---
 
-The application is developed using Flutter and can be configured for:
+## ☁️ Cloud Data Storage
+
+Firebase Cloud Firestore is used to store:
+
+* Machine states
+* Sensor readings
+* Environmental data
+* Timestamps
+* Other monitoring information
+
+---
+
+## 📱 Cross-Platform Application
+
+The project is developed using Flutter and can be configured to run on:
 
 * Android
 * Web
@@ -94,88 +109,115 @@ The application is developed using Flutter and can be configured for:
 # 🏗️ System Architecture
 
 ```text
-              ┌─────────────────────┐
-              │   Factory Sensors   │
-              │                     │
-              │ 🌡️ Temperature      │
-              │ 💧 Humidity         │
-              │ 🌫️ Air Quality      │
-              │ ⚙️ Machine Data     │
-              └──────────┬──────────┘
-                         │
-                         ▼
-              ┌─────────────────────┐
-              │       ESP32         │
-              │                     │
-              │ Sensor Data         │
-              │ Processing          │
-              │ Wi-Fi Communication │
-              └──────────┬──────────┘
-                         │
-                         │ Wi-Fi
-                         ▼
-              ┌─────────────────────┐
-              │      Firebase       │
-              │     Firestore       │
-              │                     │
-              │ Machine Status      │
-              │ Sensor Readings     │
-              │ Real-Time Data      │
-              └──────────┬──────────┘
-                         │
-                         │ Real-Time Stream
-                         ▼
-              ┌─────────────────────┐
-              │    Flutter App      │
-              │                     │
-              │ 📊 Dashboard        │
-              │ ⚙️ Machine Details  │
-              │ 🌡️ Sensor Data      │
-              │ 📈 Monitoring       │
-              └─────────────────────┘
+                    ┌──────────────────────┐
+                    │   Factory Sensors    │
+                    │                      │
+                    │ 🌡️ Temperature       │
+                    │ 💧 Humidity          │
+                    │ 🌫️ Air Quality       │
+                    │ ⚙️ Machine Data      │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │        ESP32         │
+                    │                      │
+                    │ Sensor Reading       │
+                    │ Data Processing      │
+                    │ Wi-Fi Communication  │
+                    └──────────┬───────────┘
+                               │
+                               │ Wi-Fi
+                               ▼
+                    ┌──────────────────────┐
+                    │       Firebase       │
+                    │      Firestore       │
+                    │                      │
+                    │ Machine Status       │
+                    │ Sensor Readings      │
+                    │ Real-Time Data       │
+                    └──────────┬───────────┘
+                               │
+                               │ Real-Time Stream
+                               ▼
+                    ┌──────────────────────┐
+                    │     Flutter App      │
+                    │                      │
+                    │ 📊 Dashboard         │
+                    │ ⚙️ Machine Details   │
+                    │ 🌡️ Sensor Data       │
+                    │ 📈 Monitoring        │
+                    └──────────────────────┘
 ```
+
+---
+
+# 🔄 Data Flow
+
+```text
+IoT Sensor
+    ↓
+ESP32
+    ↓
+Wi-Fi
+    ↓
+Firebase Firestore
+    ↓
+Flutter Firestore Listener
+    ↓
+Dashboard
+    ↓
+User
+```
+
+### Process
+
+1. Sensors collect physical/environmental measurements.
+2. ESP32 reads the sensor values.
+3. ESP32 communicates with the cloud through Wi-Fi.
+4. Sensor information is stored in Firebase Firestore.
+5. Flutter retrieves/listens to Firestore data.
+6. The dashboard displays the latest available information.
 
 ---
 
 # 🔧 Hardware Components
 
-| Component           | Purpose                                     |
-| ------------------- | ------------------------------------------- |
-| **ESP32**           | Main IoT controller and Wi-Fi communication |
-| **DHT11**           | Temperature and humidity measurement        |
-| **MQ135**           | Air quality / gas monitoring                |
-| **Power Supply**    | Provides power to the IoT hardware          |
-| **Factory Sensors** | Collect machine/environmental information   |
-
-> Additional sensors can be integrated into the system depending on the factory monitoring requirements.
+| Component              | Purpose                                                |
+| ---------------------- | ------------------------------------------------------ |
+| **ESP32**              | Main IoT controller and Wi-Fi communication            |
+| **DHT11**              | Temperature and humidity measurement                   |
+| **MQ135**              | Air quality / gas monitoring                           |
+| **Power Supply**       | Provides power to the IoT system                       |
+| **Additional Sensors** | Can be integrated according to monitoring requirements |
 
 ---
 
 # 💻 Technology Stack
 
-## Frontend
+### 🎨 Frontend
 
 <p>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" width="45"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" width="45"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" width="50" alt="Flutter"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" width="50" alt="Dart"/>
 </p>
 
-* **Flutter**
-* **Dart**
+* Flutter
+* Dart
 * Material Design
 * Responsive UI
 
-## Backend / Cloud
+### ☁️ Backend & Cloud
 
 <p>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" width="45"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" width="50" alt="Firebase"/>
 </p>
 
 * Firebase
 * Cloud Firestore
 * Real-time data synchronization
 
-## IoT
+### 🤖 IoT
 
 * ESP32
 * Wi-Fi
@@ -183,7 +225,7 @@ The application is developed using Flutter and can be configured for:
 * MQ135
 * Environmental sensors
 
-## Development Tools
+### 🛠️ Development Tools
 
 * Visual Studio Code
 * Arduino IDE
@@ -208,10 +250,10 @@ airguard_new/
 │   │
 │   ├── models/
 │   │
+│   ├── screens/
+│   │
 │   ├── services/
 │   │   └── firestore_service.dart
-│   │
-│   ├── screens/
 │   │
 │   └── widgets/
 │
@@ -224,20 +266,21 @@ airguard_new/
 └── .gitignore
 ```
 
-> The exact folder structure may change as the project develops.
+> The project structure may evolve as new features are added.
 
 ---
 
-# ☁️ Firebase Integration
+# ☁️ Firebase Firestore
 
-AirGuard uses **Cloud Firestore** as the central cloud database.
+AirGuard uses **Cloud Firestore** as its cloud database.
 
-A typical data structure can be organized as:
+A possible database organization is:
 
 ```text
 Firestore
 │
 ├── machines
+│   │
 │   ├── machine_01
 │   │   ├── name
 │   │   ├── status
@@ -249,80 +292,68 @@ Firestore
 │       └── updatedAt
 │
 └── sensors
+    │
     ├── temperature
     ├── humidity
     └── airQuality
 ```
 
-The Flutter application reads this data using the Firebase/Firestore integration.
+The Flutter application communicates with Firestore to display the latest monitoring information.
 
 ---
 
-# 🔄 Data Flow
+# 📊 Dashboard
 
-The complete data flow is:
+The AirGuard dashboard provides a centralized view of the factory environment.
 
-```text
-Sensor
-   ↓
-ESP32
-   ↓
-Wi-Fi
-   ↓
-Firebase Firestore
-   ↓
-Flutter Firestore Listener
-   ↓
-Dashboard
-   ↓
-User
-```
-
-When the ESP32 sends new data:
-
-1. The sensor measures the physical parameter.
-2. ESP32 reads the sensor value.
-3. ESP32 sends the data through Wi-Fi.
-4. Firebase stores the latest value.
-5. Flutter listens to Firestore.
-6. Dashboard updates automatically.
-
----
-
-# 📊 Application Dashboard
-
-The dashboard is designed to provide a quick overview of the factory environment.
-
-It can display:
+Example dashboard information:
 
 ```text
-┌──────────────────────────────────────┐
-│          AIRGUARD DASHBOARD          │
-├──────────────────────────────────────┤
-│                                      │
-│  🟢 Running     🟡 Idle    🔴 Error │
-│                                      │
-│  🌡️ Temperature       28°C           │
-│  💧 Humidity          65%            │
-│  🌫️ Air Quality       Normal         │
-│                                      │
-└──────────────────────────────────────┘
+┌─────────────────────────────────────────┐
+│             AIRGUARD DASHBOARD          │
+├─────────────────────────────────────────┤
+│                                         │
+│   🟢 RUNNING    🟡 IDLE    🔴 ERROR    │
+│                                         │
+│   🌡️ Temperature        28°C            │
+│   💧 Humidity           65%             │
+│   🌫️ Air Quality        Normal          │
+│                                         │
+└─────────────────────────────────────────┘
 ```
 
-The UI can be extended with:
+Future dashboard improvements can include:
 
-* Machine cards
-* Sensor cards
-* Status indicators
-* Warning indicators
-* Historical charts
-* Real-time readings
+* 📈 Historical sensor charts
+* 🚨 Warning indicators
+* 🔔 Notifications
+* 📊 Statistical analysis
+* 🏭 Multiple machine monitoring
 
 ---
 
 # 🚀 Getting Started
 
-## 1. Clone the Repository
+## Prerequisites
+
+Make sure you have installed:
+
+* Flutter SDK
+* Dart SDK
+* Android Studio / Android SDK
+* Visual Studio Code
+* Git
+* Firebase project
+
+Check Flutter installation:
+
+```bash
+flutter doctor
+```
+
+---
+
+## 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/Rupu-s/airguard_new.git
@@ -334,35 +365,41 @@ Navigate to the project:
 cd airguard_new
 ```
 
-## 2. Install Flutter Dependencies
+---
+
+## 2️⃣ Install Dependencies
 
 ```bash
 flutter pub get
 ```
 
-## 3. Configure Firebase
+---
 
-Make sure your Firebase project is configured for the application.
+## 3️⃣ Configure Firebase
 
-The project uses Firebase configuration generated for Flutter.
+Make sure the project is connected to the correct Firebase project.
 
-For a new Firebase project, configure Firebase according to your target platform.
+Firebase configuration should be set up for the target platform before running the application.
 
-## 4. Check Connected Devices
+---
+
+## 4️⃣ Check Available Devices
 
 ```bash
 flutter devices
 ```
 
-## 5. Run the Application
+---
 
-For Chrome:
+## 5️⃣ Run the Application
+
+### Chrome
 
 ```bash
 flutter run -d chrome
 ```
 
-For Android:
+### Android
 
 ```bash
 flutter run
@@ -378,7 +415,7 @@ To create a production web build:
 flutter build web
 ```
 
-The generated web files will be available inside:
+The generated files will be located at:
 
 ```text
 build/web/
@@ -388,19 +425,21 @@ build/web/
 
 # 📱 Build for Android
 
-To generate an APK:
+### Debug APK
 
 ```bash
 flutter build apk
 ```
 
-For a release APK:
+### Release APK
 
 ```bash
 flutter build apk --release
 ```
 
-For Google Play Store deployment, an Android App Bundle can be generated using:
+### Android App Bundle
+
+For Google Play Store deployment:
 
 ```bash
 flutter build appbundle
@@ -410,84 +449,94 @@ flutter build appbundle
 
 # 🔐 Security
 
-Firebase credentials and sensitive configuration must be handled carefully.
+Security is an important part of an IoT cloud application.
 
-Do not upload:
+Never upload sensitive credentials such as:
 
-* Private keys
-* Service account JSON files
-* Passwords
-* Authentication secrets
-* Private API credentials
+* ❌ Private keys
+* ❌ Service account JSON files
+* ❌ Passwords
+* ❌ Authentication secrets
+* ❌ Private credentials
 
-Firebase **Security Rules** should also be configured properly before deploying the application for public use.
+Firebase **Security Rules** should be configured appropriately before deploying the system for public use.
 
 ---
 
-# 🧪 Development Status
+# 🧪 Project Status
 
-| Feature                   | Status            |
-| ------------------------- | ----------------- |
-| Flutter UI                | ✅ Implemented     |
-| Firebase Integration      | ✅ Implemented     |
-| Firestore Data            | ✅ Implemented     |
-| Real-Time Monitoring      | ✅ Implemented     |
-| ESP32 Integration         | 🔄 In Development |
-| Environmental Sensors     | 🔄 In Development |
-| Machine Status Monitoring | 🔄 In Development |
-| Web Deployment            | 🚧 Planned        |
-| Android Release           | 🚧 Planned        |
+| Feature                  | Status            |
+| ------------------------ | ----------------- |
+| Flutter Application      | ✅ Implemented     |
+| Firebase Integration     | ✅ Implemented     |
+| Cloud Firestore          | ✅ Implemented     |
+| Real-Time Data           | ✅ Implemented     |
+| Machine Monitoring       | 🔄 In Development |
+| ESP32 Integration        | 🔄 In Development |
+| Environmental Monitoring | 🔄 In Development |
+| Web Deployment           | 🚧 Planned        |
+| Android Release          | 🚧 Planned        |
 
 ---
 
 # 🛣️ Future Improvements
 
-Future versions of AirGuard may include:
+The following features may be added in future versions:
 
-* 📈 Historical sensor-data charts
-* 🚨 Automatic abnormal-condition alerts
+* 📈 Historical data visualization
+* 🚨 Automatic abnormal-condition detection
 * 🔔 Push notifications
 * 📊 Advanced analytics
 * 🏭 Multiple factory support
 * 👤 User authentication
 * 🔐 Role-based access control
-* 📱 Improved mobile UI
+* 📱 Improved mobile interface
 * 🌐 Public web dashboard
-* 📡 More IoT sensors
+* 📡 Additional IoT sensors
 * 🧠 Predictive maintenance
 * 🤖 AI-based anomaly detection
 
 ---
 
-# 👥 Team
+# 👥 Contributors
 
-**AirGuard — IoT & Smart Factory Monitoring Project**
-
-Developed as an IoT and Robotics Engineering project.
+This project is developed as a collaborative IoT and Robotics Engineering project.
 
 ### Contributors
 
-* **Rupu**
-* Add other team members here
+| Contributor              | GitHub                                                 |
+| ------------------------ | ------------------------------------------------------ |
+| **Rupu**                 | [@Rupu-s](https://github.com/Rupu-s)                   |
+| **Pritom Kumar Bhowmik** | [@pritom05-crypto](https://github.com/pritom05-crypto) |
+
+<p align="center">
+  <a href="https://github.com/Rupu-s">
+    <img src="https://github.com/Rupu-s.png" width="80" height="80" alt="Rupu"/>
+  </a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/pritom05-crypto">
+    <img src="https://github.com/pritom05-crypto.png" width="80" height="80" alt="Pritom"/>
+  </a>
+</p>
 
 ---
 
 # 📜 License
 
-This project is developed for educational and research purposes.
-
-You may modify and extend the project according to your requirements.
+This project is developed for **educational and research purposes**.
 
 ---
 
-# ⭐ Support
+# ⭐ Support the Project
 
-If you find this project useful, consider giving the repository a ⭐ on GitHub.
+If you find **AirGuard** useful or interesting, consider giving this repository a ⭐ on GitHub.
 
 <p align="center">
 
-### 🌬️ AirGuard
+## 🌬️ AirGuard
 
-**Smart Monitoring. Real-Time Insights. Safer Factories.**
+### Smart Monitoring. Real-Time Insights. Safer Factories.
+
+Built with ❤️ using Flutter, Firebase & IoT.
 
 </p>
